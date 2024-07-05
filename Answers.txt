@@ -1,0 +1,16 @@
+1) How would you deploy this application in production?
+In production, I would package the application using Docker for consistent deployment across various environments. Kubernetes would manage these containers to ensure scalability and 
+automate operational tasks. Continuous Integration/Continuous Deployment (CI/CD) pipelines, such as Jenkins, would automate build and deployment processes, while configuration settings would be managed through secure environment variables and secrets. Monitoring tools like Prometheus and Grafana would provide real-time insights into application performance and health. Security measures, including IAM roles and data encryption, would safeguard data integrity and control access.
+
+2) What other components would you want to add to make this production ready?
+To enhance robustness, I would prioritize improving error handling mechanisms and implementing reliable retry strategies for interactions with SQS and the database. Optimizing data transformation processes and database query performance would improve overall efficiency. Implementing automated backup strategies, such as AWS RDS snapshots, and comprehensive disaster recovery plans would ensure data resilience. Scaling strategies would involve horizontal scaling with load balancers and vertical scaling as needed. Version control using Git and thorough documentation would facilitate collaboration and operational transparency.
+
+3) How can this application scale with a growing dataset?
+For scalability, I would implement database sharding or partitioning to distribute data storage across multiple nodes. Load balancers would manage incoming traffic to maintain consistent performance levels. Asynchronous processing techniques, including message queues and batch processing, would efficiently handle large volumes of data. Implementing caching mechanisms like Redis would optimize access to frequently requested data. Regular performance tuning and vertical scaling of resources would support ongoing scalability requirements.
+
+4) How can PII be recovered later on?
+To ensure the recoverability of masked PII, I would maintain secure mappings or keys that link masked values with their original data. Detailed logging of data transformations and access to recovery mechanisms would facilitate audit trails and forensic analysis when necessary. Strict management of encryption keys and compliance with data privacy regulations, such as GDPR and CCPA, would guide responsible data handling practices. For immediate decoding, you can use the following command:
+Command: echo -n "<sample_base64_encoded_string>" | base64 --decode
+
+5) What are the assumptions you made?
+Assumptions include leveraging Docker for consistent testing and deployment across environments, utilizing tools like Localstack and PostgreSQL for local development with preloaded data. Expecting a standardized JSON data format from SQS ensures predictable data processing. Simulating security constraints and scalability challenges during testing would validate readiness for production environments.
