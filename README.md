@@ -71,18 +71,21 @@ python Code_ETL.py --endpoint-url http://localhost:4566 --queue-name login-queue
 
  **4) Verify Data**:
    - Check if data has been loaded into PostgreSQL:
-     ```bash
-     psql -d postgres -U postgres -h localhost -p 5432 -W
-     postgres=# select * from user_logins;
-     ```
+```bash
+psql -d postgres -U postgres -h localhost -p 5432 -W
+```
+**5) To display the table columns, enter the password "postgres" and use the following command to verify the columns:**:
+```
+# postgres = select * from user_logins;
+```
 
-**5) Decrypting Masked PIIs**:
+**6) Decrypting Masked PIIs**:
 The `ip` and `device_id` fields are masked using base64 encoding. To recover the original values, you can use the following command:
 ```bash
 echo -n "<sample_base64_encoded_string>" | base64 --decode
 ```
 
- **6) Stop the Docker**:
+**7) Stop the Docker**:
    - Check if data has been loaded into PostgreSQL:
 ```bash
 docker-compose down 
