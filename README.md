@@ -45,7 +45,7 @@ Use the provided `aws-configuration.sh` file to set up:
 
 To start the AWS CLI:
 ```bash
-bash aws-configuration.sh
+bash aws_configuration.sh
 ```
 
   
