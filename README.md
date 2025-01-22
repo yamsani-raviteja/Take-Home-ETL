@@ -1,4 +1,4 @@
-# Fetch Rewards Data Engineering Take Home: ETL off an SQS Queue
+# ETL Pipeline
 
 1. **Read from SQS Queue**: Retrieve user login behavior data from an SQS Queue.
 2. **Transform Data**: Mask sensitive fields (`device_id` and `ip`) while ensuring masked values allow for duplicate identification.
